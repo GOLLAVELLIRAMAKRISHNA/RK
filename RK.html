@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .heart {
+      width: 200px;
+      height: 200px;
+      background-color: #ff0000;
+      position: relative;
+    }
+
+    .main {
+      transform: rotate(45deg);
+    }
+
+    .heart::after,
+    .heart::before {
+      position: absolute;
+      content: "";
+      width: 200px;
+      height: 200px;
+      background-color: #ff0000;
+      transform: translateY(-50%);
+      border-radius: 50%;
+    }
+
+    .heart::after {
+      transform: translateX(-50%);
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: #333;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      -webkit-text-stroke: 0.5vw;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    h2::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 0;
+      height: fit-content;
+      color: #ffffff;
+      -webkit-text-stroke: 0vw #333;
+      overflow: hidden;
+      animation: ani 4s linear infinite;
+      border-right: 1.5px solid #72ffe3;
+      z-index: 1;
+    }
+
+    @keyframes ani {
+
+      0%,
+      50%,
+      100% {
+        width: 0;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5);
+      }
+
+      30%,
+      70% {
+        width: 100%;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5), 0 0 4px rgba(255, 255, 255, 0.5);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2 data-text="RamaKrishna">RamaKrishna
+    <div class="main">
+      <div class="heart"></div>
+    </div>
+  </h2>
+</body>
+
+</html>
