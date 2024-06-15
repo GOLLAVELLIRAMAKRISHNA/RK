@@ -3,12 +3,6 @@
     padding: 0;
   }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
   .heart {
     width: 200px;
     height: 200px;
@@ -39,7 +33,7 @@ body{
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     background-color: #333;
   }
 
