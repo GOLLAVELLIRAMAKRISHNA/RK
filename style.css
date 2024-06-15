@@ -3,6 +3,12 @@
     padding: 0;
   }
 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
   .heart {
     width: 200px;
     height: 200px;
